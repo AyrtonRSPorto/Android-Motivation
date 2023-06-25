@@ -26,8 +26,11 @@ class Mock {
         Phrase("Riscos devem ser corridos, porque o maior perigo é não arriscar nada!", sunny)
     )
 
-    fun getPhrase(valueCategory: Int): String{
-        val filtered = mListPhrase.filter { it.categoryId == valueCategory || valueCategory == all}
+    fun getPhrase(valueCategory: Int): String {
+        val filtered =
+            mListPhrase.filter {
+                (it.categoryId == valueCategory || valueCategory == all)
+            }
         return filtered[Random.nextInt(filtered.size)].description
     }
 }
